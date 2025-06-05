@@ -7,20 +7,32 @@
 </head>
 
 <body>
+  <!-- Header for title of game -->
   <h2>Rock Paper Scissors</h2>
 
+  <!-- CSS container that centers and spaces everything -->
   <div class="button-container">
 
+    <!-- button for each move which runs playGame function to play -->
+    <!-- img is also embedded in button tags to act as button -->
     <button onclick="playGame('rock');"><img src="img/rock.png"></img></button>
-
     <button onclick="playGame('paper');"><img src="img/paper.png"></img></button>
-
     <button onclick="playGame('scissors');"><img src="img/scissors.png"></img></button>
+
     
   </div>
 
   <script>
 
+    /*
+
+    # playGame function that takes in playerMove
+    
+    # pickComputerMove function stored in computerMove constant to compared against playerMove
+
+    # empty result string fills in as comparison is finished to fill in result of game
+    
+    */
     function playGame(playerMove) {
       const computerMove = pickComputerMove();
 
@@ -64,7 +76,17 @@
       alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
     }
 
+    /*
+    
+    # pickComputerMove function determines random computer move by storing Math.random number in randomNumber constant
 
+    # Math.random stores a value between 0 to 1
+
+    # To determine computerMove, randomNumber is split by 1/3 to determine the move 
+    
+    # (0 - 1/3 for rock), (1/3 to 2/3 for paper), (2/3 to 3/3 for scissors)
+    
+    */
     function pickComputerMove() {
       const randomNumber = Math.random();
 
