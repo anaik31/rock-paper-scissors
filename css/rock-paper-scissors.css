@@ -14,7 +14,7 @@ h2{
   margin-top: 50px;
 }
 
-button {
+.game-buttons {
   border: none;
   background: none;
   padding: 0;
@@ -24,4 +24,13 @@ button {
 button img {
   width: 150px;
 }
+
+.reset-btn {
+  display: block;
+  margin: 20px auto; 
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 

@@ -15,14 +15,26 @@
 
     <!-- button for each move which runs playGame function to play -->
     <!-- img is also embedded in button tags to act as button -->
-    <button onclick="playGame('rock');"><img src="img/rock.png"></img></button>
-    <button onclick="playGame('paper');"><img src="img/paper.png"></img></button>
-    <button onclick="playGame('scissors');"><img src="img/scissors.png"></img></button>
+    <button class = "game-buttons" onclick="playGame('rock');"><img src="img/rock.png"></img></button>
+    <button class = "game-buttons" onclick="playGame('paper');"><img src="img/paper.png"></img></button>
+    <button class = "game-buttons" onclick="playGame('scissors');"><img src="img/scissors.png"></img></button>
 
-    
+
   </div>
 
+  <button class = "reset-btn" onclick="
+      score.wins = 0;
+      score.ties = 0;
+      score.losses = 0;
+    ">Reset Score</button>
+
   <script>
+
+    const score = {
+      wins: 0,
+      losses: 0,
+      ties: 0
+    };
 
     /*
 
@@ -73,7 +85,18 @@
         }
       }
 
-      alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+      if (result === 'You Win.') {
+        score.wins += 1;
+      }
+      else if (result === 'You Lose.') {
+        score.losses += 1;
+      }
+      else if (result === 'Tie.') {
+        score.ties += 1;
+      }
+
+      alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
     }
 
     /*
